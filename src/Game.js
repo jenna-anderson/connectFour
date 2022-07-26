@@ -84,7 +84,8 @@ const Game = (props) => {
         //   tempBoard[i - 1] = tempBoard[i - 1] + 2;
         //   tempBoard[i - 2] = tempBoard[i - 2] + 2;
         //   tempBoard[i - 3] = tempBoard[i - 3] + 2;
-          let [col, row] = boardPos(i - 3);
+        //   let [col, row] = boardPos(i - 3);
+          let [col, row] = boardPos(i);
           winner_info = [col, row, winningDirection.Right];
           break;
         }
@@ -132,7 +133,8 @@ const Game = (props) => {
         //   tempBoard[i - 7] = tempBoard[i - 7] + 2;
         //   tempBoard[i - 14] = tempBoard[i - 14] + 2;
         //   tempBoard[i - 21] = tempBoard[i - 21] + 2;
-          let [col, row] = boardPos(i - 21);
+        //   let [col, row] = boardPos(i - 21);
+          let [col, row] = boardPos(i);
           winner_info = [col, row, winningDirection.Up];
           break;
         }
@@ -180,7 +182,8 @@ const Game = (props) => {
         //   tempBoard[i - 8] = tempBoard[i - 8] + 2;
         //   tempBoard[i - 16] = tempBoard[i - 16] + 2;
         //   tempBoard[i - 24] = tempBoard[i - 24] + 2;
-          let [col, row] = boardPos(i - 24);
+        //   let [col, row] = boardPos(i - 24);
+          let [col, row] = boardPos(i);
           winner_info = [col, row, winningDirection.RightDiagonal];
           break;
         }
@@ -196,7 +199,8 @@ const Game = (props) => {
         //   tempBoard[i - 6] = tempBoard[i - 6] + 2;
         //   tempBoard[i - 12] = tempBoard[i - 12] + 2;
         //   tempBoard[i - 18] = tempBoard[i - 18] + 2;
-          let [col, row] = boardPos(i - 24);
+        //   let [col, row] = boardPos(i - 24);
+          let [col, row] = boardPos(i);
           winner_info = [col, row, winningDirection.RightDiagonal];
           break;
         }

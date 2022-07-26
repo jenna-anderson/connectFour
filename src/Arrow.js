@@ -3,15 +3,17 @@ import styles from './Arrow.module.scss';
 
 const Arrow = ({ sendPlayMove, status, account, game, board, col, row }) => {
   const getClassName = () => {
-    if (status !== "finished" && board[0][row] === 0 && account === game.nextPlayer) {
-     return styles.enabled;
+    if (status !== "finished" && board[0][row] === 0 && account === game.nextPlayer && account === game.player1) {
+     return styles.player1Enabled;
+    } else if (status !== "finished" && board[0][row] === 0 && account === game.nextPlayer && account === game.player2) {
+     return styles.player2Enabled;
     } else {
       return styles.disabled;
     }
-  }
+}
   
   return (
-    <div
+    <button
       onClick={() => {
         sendPlayMove(col);
       }}
@@ -23,7 +25,7 @@ const Arrow = ({ sendPlayMove, status, account, game, board, col, row }) => {
       className={getClassName()}
     >
       <BsArrowDownSquareFill />
-    </div>
+    </button>
   );
 };
 

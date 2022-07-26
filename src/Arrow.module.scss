@@ -2,11 +2,44 @@
 
 .disabled {
     color: gray;
+    :hover {
+        cursor: default;
+    }
 }
 
-.enabled {
+.player1Enabled {
     color: $blue;
     :hover {
-        color: $green;
+        color: $red;
+    }
+    &:focus {
+        color: $red;
+    }
+}
+
+.player2Enabled {
+    color: $blue;
+    :hover {
+        color: $yellow;
+    }
+    &:focus {
+        color: $yellow;
+    }
+}
+
+button {
+    outline: none;
+    padding: 0;
+    border: 0;
+    background-color: white;
+    font-size: 36px;
+    :hover {
+        cursor: pointer;
+    }
+}
+
+@media (max-width: 600px) {
+    button {
+        font-size: 24px;
     }
 }
