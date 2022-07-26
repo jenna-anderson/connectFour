@@ -1,0 +1,12 @@
+@import './vars.scss';
+
+.disabled {
+    color: gray;
+}
+
+.enabled {
+    color: $blue;
+    :hover {
+        color: $green;
+    }
+}

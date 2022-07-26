@@ -1,0 +1,13 @@
+@import './vars.scss';
+
+.container {
+    font-size: 14px;
+    background-color: $blue;
+    padding: 12px;
+    border-radius: 8px;
+    color: white;
+}
+
+.button {
+    background-color: red;
+}

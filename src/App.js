@@ -1,24 +1,49 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import { createClient, Provider } from "urql";
+
+import Header from "./Header.js";
+import Menu from "./Menu.js";
+import Game from "./Game.js";
+import sound from "./www.fesliyanstudios.com.mp3";
+
+const client = createClient({
+  url: "https://api.thegraph.com/subgraphs/name/jenna-anderson/connect-four-game-subgraph",
+});
 
 function App() {
+  const [account, setAccount] = useState(null);
+  const [game, setGame] = useState(null);
+
+  const playDrop = () => {
+    let audio = new Audio(sound);
+    audio.play();
+  };
+
+  const renderBody = () => {
+    if (account && !game) {
+      return <Menu account={account} handleGame={setGame} />;
+    } else if (game) {
+      return <Game account={account} game={game} handleGame={setGame} />;
+    }
+  };
+
+  useEffect(() => {
+    if (game) {
+      playDrop();
+    }
+  }, [game]);
+
+  useEffect(() => {
+    setGame(null);
+  }, [account]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider value={client}>
+      <div className="App">
+        <Header handleAccount={setAccount} />
+        {renderBody()}
+      </div>
+    </Provider>
   );
 }
 
