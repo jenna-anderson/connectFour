@@ -11,6 +11,7 @@ Connect Four rules can be found at https://www.ultraboardgames.com/connect4/game
 
 - clean up file structure
 - combine "started by me" and "accepted by me" into "my games"
+- change to different test network since Rinkeby is no longer supported on The Graph or Metamask - use Goerli?
 
 ## License
 
